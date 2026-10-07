@@ -1,0 +1,81 @@
+{
+  "schema": "cellforge.recipe.v2",
+  "scope": "synthetic partial self-expansion from purchased components",
+  "config": {
+    "targetCells": 20,
+    "reinvestEvery": 3,
+    "durationSec": 1200,
+    "seed": 42,
+    "testFailureRate": 0.12,
+    "forceTestFailure": false,
+    "commissionSec": 45,
+    "autoReplenish": false,
+    "extraCells": [
+      {
+        "id": "manual-1",
+        "stationId": "integrate"
+      }
+    ],
+    "stock": {
+      "frameKit": 20,
+      "joints": 120,
+      "controller": 20,
+      "sensors": 40,
+      "gripper": 20,
+      "filament": 3600
+    }
+  },
+  "layout": [
+    {
+      "id": "receive",
+      "x": -6.6,
+      "z": -4.2
+    },
+    {
+      "id": "frame",
+      "x": -3.3,
+      "z": -4.2
+    },
+    {
+      "id": "print",
+      "x": 0,
+      "z": -4.2
+    },
+    {
+      "id": "arm",
+      "x": 3.3,
+      "z": -4.2
+    },
+    {
+      "id": "integrate",
+      "x": 6.6,
+      "z": -4.2
+    },
+    {
+      "id": "tool",
+      "x": 6.6,
+      "z": 4.2
+    },
+    {
+      "id": "electronics",
+      "x": 3.3,
+      "z": 4.2
+    },
+    {
+      "id": "test",
+      "x": 0,
+      "z": 4.2
+    },
+    {
+      "id": "pack",
+      "x": -3.3,
+      "z": 4.2
+    },
+    {
+      "stationId": "integrate",
+      "id": "manual-1",
+      "x": -6,
+      "z": 8
+    }
+  ]
+}
