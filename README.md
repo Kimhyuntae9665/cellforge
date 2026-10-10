@@ -8,9 +8,34 @@ CELLFORGE is a standalone browser-based simulation of synthetic final assembly. 
 
 독립적인 학습 프로젝트이며 공정 시간과 실패율은 합성 모델의 가정입니다. 특정 회사의 프로젝트·도입 성과·실측 공장 모델을 뜻하지 않습니다.
 
+## LS ELECTRIC 경영지원 DT 지원 포트폴리오
+
+**[3페이지 PDF 보기](docs/portfolio/CELLFORGE_LSELECTRIC_DT_Portfolio.pdf)** · 아래 첫 장을 클릭해도 PDF를 열 수 있습니다.
+
+공고의 AI/Digital 혁신 과제 발굴·기획을 위해 생산 조건별 결과를 비교하는 시제품을 만들었습니다. 1~2장은 합성 모델의 실제 실행 화면과 정책 비교 결과, 3장은 실제 데이터 대조·소규모 시험·승인을 제안하는 현장 검토 계획입니다.
+
+독립 학습용 합성 프로토타입입니다. 김현태가 주제와 방향을 정하고 수정 의견을 제시했으며, Codex가 코드 구현·실험·검증을 지원했습니다.
+
+[![포트폴리오 1장: 설비 확장과 출하량을 비교하는 가상 실험](docs/portfolio/page-1.png)](docs/portfolio/CELLFORGE_LSELECTRIC_DT_Portfolio.pdf)
+
+<details>
+<summary>2·3장 미리보기 펼치기</summary>
+
+[![포트폴리오 2장: 같은 조건에서 비교한 완성량과 출하 가능량](docs/portfolio/page-2.png)](docs/portfolio/CELLFORGE_LSELECTRIC_DT_Portfolio.pdf)
+
+[![포트폴리오 3장: 현장 적용 전 확인할 사항과 검토 계획](docs/portfolio/page-3.png)](docs/portfolio/CELLFORGE_LSELECTRIC_DT_Portfolio.pdf)
+
+</details>
+
 ![CELLFORGE 실제 실행 화면](docs/screenshots/01-overview.png)
 
-*실제 브라우저 화면 · 2026.10.07. 기본 20대 확장 조건의 16분 시점: 완성 13대, 편입 4대, 사용 가능한 생산 자원 13개. 로봇 동작은 작업 기록의 진행률을 시각화합니다.*
+*실제 브라우저 화면 · 2026.10.10 · 공장에 가까이 다가간 시점. 기본 20대 확장 조건의 16분 시점: 완성 13대, 편입 4대, 사용 가능한 생산 자원 13개. 로봇 동작은 작업 기록의 진행률을 시각화합니다.*
+
+### 설비를 가까이 보기
+
+![로봇 암, 작업대와 컨베이어를 가까이 본 실제 화면](docs/screenshots/11-equipment-closeup.png)
+
+*위 실행 화면에서 공장 부분만 캡처했습니다. 앞줄은 완성한 셀을 다시 사용한 조립 설비, 뒤쪽은 기존 공정이며 가운데 컨베이어가 보입니다. 로봇 동작은 작업 기록을 보여 주는 시각화이고, 이동·충돌·안전 계산은 포함하지 않습니다.*
 
 ## 1분 안에 시작하기
 
