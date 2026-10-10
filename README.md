@@ -12,18 +12,24 @@ CELLFORGE is a standalone browser-based simulation of synthetic final assembly. 
 
 **[3페이지 PDF 보기](docs/portfolio/CELLFORGE_LSELECTRIC_DT_Portfolio.pdf)** · 아래 첫 장을 클릭해도 PDF를 열 수 있습니다.
 
-공고의 AI/Digital 혁신 과제 발굴·기획을 위해 생산 조건별 결과를 비교하는 시제품을 만들었습니다. 1~2장은 합성 모델의 실제 실행 화면과 정책 비교 결과, 3장은 실제 데이터 대조·소규모 시험·승인을 제안하는 현장 검토 계획입니다.
+공고의 AI/Digital 기반 업무·운영 혁신 과제 발굴·기획을 위해, 출하 목표에 맞는 개선안을 비교하는 시제품을 만들었습니다. 회사의 공개 DX 방향을 확인하고 **업무 문제 → 대안 비교 → 선택·보류 이유 → 현업 검증안**으로 포트폴리오를 구성했습니다.
+
+- **1장 — 무엇을 검토하나?** 생산량 증가가 출하 증가로 이어지는지 확인하는 문제와 큰 실제 실행 화면입니다. 이 문제는 공개 자료에서 도출한 가상 검토 사례이며 회사의 실제 장애를 확인한 것이 아닙니다.
+- **2장 — 무엇을 먼저 검증하나?** 기존 유지·암 조립 설비 추가·검사 실패 가정 개선·완성품 설비 재사용을 비교합니다. 암 설비 추가 시 출하 가능량 15→18대는 다음 검증 후보를 고르는 근거입니다. 비용·공간·안전·실측 확인 전에는 기존 조건 유지로 제안합니다.
+- **3장 — 내가 무엇을 판단했나?** 본인의 업무 관련성 검토 요청과 화면·설명 개선 기준을 실제 요청 범위로 보여 줍니다. 현업의 목표·기록 확인, 조건 보정, 소규모 시험과 승인 절차는 제안으로 구분합니다.
+
+[대안별 정확한 입력·결과·반복 비교](docs/DECISION_COMPARISON.md) · [회사·공고 근거와 제작 기여](docs/PORTFOLIO_DECISIONS.md)
 
 독립 학습용 합성 프로토타입입니다. 김현태가 주제와 방향을 정하고 수정 의견을 제시했으며, Codex가 코드 구현·실험·검증을 지원했습니다.
 
-[![포트폴리오 1장: 설비 확장과 출하량을 비교하는 가상 실험](docs/portfolio/page-1.png)](docs/portfolio/CELLFORGE_LSELECTRIC_DT_Portfolio.pdf)
+[![포트폴리오 1장: 설비 증설 전에 출하 효과를 검토하는 문제와 실행 화면](docs/portfolio/page-1.png)](docs/portfolio/CELLFORGE_LSELECTRIC_DT_Portfolio.pdf)
 
 <details>
 <summary>2·3장 미리보기 펼치기</summary>
 
-[![포트폴리오 2장: 같은 조건에서 비교한 완성량과 출하 가능량](docs/portfolio/page-2.png)](docs/portfolio/CELLFORGE_LSELECTRIC_DT_Portfolio.pdf)
+[![포트폴리오 2장: 네 가지 개선안의 출하 가능량과 검증 후보 선택 이유](docs/portfolio/page-2.png)](docs/portfolio/CELLFORGE_LSELECTRIC_DT_Portfolio.pdf)
 
-[![포트폴리오 3장: 현장 적용 전 확인할 사항과 검토 계획](docs/portfolio/page-3.png)](docs/portfolio/CELLFORGE_LSELECTRIC_DT_Portfolio.pdf)
+[![포트폴리오 3장: 본인이 정한 검토 기준과 현업 검증·승인 제안](docs/portfolio/page-3.png)](docs/portfolio/CELLFORGE_LSELECTRIC_DT_Portfolio.pdf)
 
 </details>
 

@@ -1,9 +1,13 @@
 {
-  "docs/portfolio/CELLFORGE_LSELECTRIC_DT_Portfolio.pdf": "2d68b19f306e294fcc56873863de4afaa0fa6216fca3edb1aadb07f5ecceffa6",
-  "docs/portfolio/page-1.png": "f0ccb649fb44dff1e0fd82874b21b346191dd0ceb5c54648de88e01fee2abbe2",
-  "docs/portfolio/page-2.png": "d7705ff216aa5072ba65dabefeb38c7e066af1f076c16a06b4f559486bac9da7",
-  "docs/portfolio/page-3.png": "dc519f00e1053e45fed1fdd9104de81de7dac4947455d4dbf94ac5bcaf32ffab",
-  "docs/portfolio/overview.png": "fb2f7e72cfa91e65357c0ed75e701a02cbd14ea06ad1cdcbbf78da2a8e2305b9",
+  "docs/portfolio/CELLFORGE_LSELECTRIC_DT_Portfolio.pdf": "beff3d3cc3a55a2a81c206a7787ebc012c64229d1e6d43fa3d742a7526a7bbea",
+  "docs/portfolio/page-1.png": "0ae3fd6b8fd36ca99b353df228ae4fc84e4f15575aca5e64b375a760f092b2ee",
+  "docs/portfolio/page-2.png": "e18c15b5cb1913fdee493e431be54056a00be8b42c09638e1d35bf2756779a8c",
+  "docs/portfolio/page-3.png": "5b8f0eb997955010d182a502b8eb6d67a335de2d12d1c0213ac47cb567613f00",
+  "docs/portfolio/overview.png": "2ae2d5a0fed056fd434d290f51c55fa495e507e50d34ab66343f617bb512de45",
   "docs/screenshots/01-overview.png": "c406468cae4f70d65405f9701fa903af8eca756d2fafe101409f05190c17a5c1",
-  "docs/screenshots/11-equipment-closeup.png": "6045ba9fef58cd44b4775a6da59717a5e862878a3e4cce9a9d76ed108a2ab084"
+  "docs/screenshots/11-equipment-closeup.png": "6045ba9fef58cd44b4775a6da59717a5e862878a3e4cce9a9d76ed108a2ab084",
+  "docs/decision-comparison.json": "ac5ef03299759cf46313a5977dd4030519ce11dd2fd474b1a967cb0b904df0b1",
+  "docs/DECISION_COMPARISON.md": "7d02e24593587eddffc797830f0b30616701a31481c733d7201a61aed1a3e3d8",
+  "docs/PORTFOLIO_DECISIONS.md": "83a627f8e3b2e0bf3bbabaab8ea7eac7d4f9db201a60756a1624824512bc628b",
+  "scripts/decision-compare.mjs": "91d1953e134fa20dbb6a406fb74d32774fd9089fbeceb9a4273ffa958c11af76"
 }

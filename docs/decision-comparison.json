@@ -1,0 +1,2452 @@
+{
+  "schema": "cellforge.decision-comparison.v1",
+  "analysisDate": "2026-10-10",
+  "evidence": {
+    "label": "verified_local_source",
+    "engineSHA256": "8e20f1b520a1bd20cf3c427ff277de338c070279c132345944ac3b170ef45ee2",
+    "reproduction": "node scripts/decision-compare.mjs"
+  },
+  "scope": "Synthetic fixed-order comparison. No field performance, ROI, procurement approval, or personal test-execution claim.",
+  "roleMapping": {
+    "label": "derived",
+    "source": "https://lselectric.recruiter.co.kr/career/jobs/129138",
+    "duties": [
+      "AI/Digital 기반 업무, 운영 혁신 과제 발굴 및 기획",
+      "AX를 위한 업무 프로세스 최적화 및 거버넌스 구축"
+    ],
+    "application": "Choose an operational objective, compare constrained alternatives, and define field verification gates before approval."
+  },
+  "commonInput": {
+    "targetCells": 20,
+    "stock": {
+      "frameKit": 20,
+      "joints": 120,
+      "controller": 20,
+      "sensors": 40,
+      "gripper": 20,
+      "filament": 3600
+    },
+    "durationSec": 1200,
+    "seed": 42,
+    "reinvestEvery": 0,
+    "testFailureRate": 0.12,
+    "commissionSec": 45,
+    "forceTestFailure": false,
+    "autoReplenish": false,
+    "extraCells": []
+  },
+  "scenarios": [
+    {
+      "id": "baseline",
+      "label": "기준 유지",
+      "inputDifferences": {},
+      "config": {
+        "targetCells": 20,
+        "reinvestEvery": 0,
+        "durationSec": 1200,
+        "seed": 42,
+        "testFailureRate": 0.12,
+        "forceTestFailure": false,
+        "commissionSec": 45,
+        "autoReplenish": false,
+        "extraCells": [],
+        "stock": {
+          "frameKit": 20,
+          "joints": 120,
+          "controller": 20,
+          "sensors": 40,
+          "gripper": 20,
+          "filament": 3600
+        }
+      },
+      "metrics": {
+        "completed": 15,
+        "shippable": 15,
+        "installed": 0,
+        "pendingInstall": 0,
+        "wip": 5,
+        "quarantined": 0,
+        "blocked": 0,
+        "pendingRequests": 0
+      },
+      "initialResources": {
+        "count": 9,
+        "byStage": {
+          "receive": 1,
+          "frame": 1,
+          "print": 1,
+          "arm": 1,
+          "integrate": 1,
+          "tool": 1,
+          "electronics": 1,
+          "test": 1,
+          "pack": 1
+        },
+        "resources": [
+          {
+            "id": "receive-01",
+            "stationId": "receive",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "frame-01",
+            "stationId": "frame",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "print-01",
+            "stationId": "print",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "arm-01",
+            "stationId": "arm",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "integrate-01",
+            "stationId": "integrate",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "tool-01",
+            "stationId": "tool",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "electronics-01",
+            "stationId": "electronics",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "test-01",
+            "stationId": "test",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "pack-01",
+            "stationId": "pack",
+            "onlineAt": 0,
+            "sourceJobId": null
+          }
+        ]
+      },
+      "endCapacityByStage": {
+        "receive": 1,
+        "frame": 1,
+        "print": 1,
+        "arm": 1,
+        "integrate": 1,
+        "tool": 1,
+        "electronics": 1,
+        "test": 1,
+        "pack": 1
+      },
+      "materialRemaining": {
+        "frameKit": 0,
+        "joints": 0,
+        "controller": 0,
+        "sensors": 0,
+        "gripper": 0,
+        "filament": 0
+      },
+      "traceEventCounts": {
+        "firstInspectionFailures": 2,
+        "quarantines": 0
+      }
+    },
+    {
+      "id": "extra_arm",
+      "label": "초기 암 설비 1개 추가",
+      "inputDifferences": {
+        "extraCells": {
+          "baseline": [],
+          "scenario": [
+            {
+              "id": "manual-1",
+              "stationId": "arm"
+            }
+          ]
+        }
+      },
+      "config": {
+        "targetCells": 20,
+        "reinvestEvery": 0,
+        "durationSec": 1200,
+        "seed": 42,
+        "testFailureRate": 0.12,
+        "forceTestFailure": false,
+        "commissionSec": 45,
+        "autoReplenish": false,
+        "extraCells": [
+          {
+            "id": "manual-1",
+            "stationId": "arm"
+          }
+        ],
+        "stock": {
+          "frameKit": 20,
+          "joints": 120,
+          "controller": 20,
+          "sensors": 40,
+          "gripper": 20,
+          "filament": 3600
+        }
+      },
+      "metrics": {
+        "completed": 18,
+        "shippable": 18,
+        "installed": 0,
+        "pendingInstall": 0,
+        "wip": 2,
+        "quarantined": 0,
+        "blocked": 0,
+        "pendingRequests": 0
+      },
+      "initialResources": {
+        "count": 10,
+        "byStage": {
+          "receive": 1,
+          "frame": 1,
+          "print": 1,
+          "arm": 2,
+          "integrate": 1,
+          "tool": 1,
+          "electronics": 1,
+          "test": 1,
+          "pack": 1
+        },
+        "resources": [
+          {
+            "id": "receive-01",
+            "stationId": "receive",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "frame-01",
+            "stationId": "frame",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "print-01",
+            "stationId": "print",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "arm-01",
+            "stationId": "arm",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "integrate-01",
+            "stationId": "integrate",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "tool-01",
+            "stationId": "tool",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "electronics-01",
+            "stationId": "electronics",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "test-01",
+            "stationId": "test",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "pack-01",
+            "stationId": "pack",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "manual-1",
+            "stationId": "arm",
+            "onlineAt": 0,
+            "sourceJobId": null
+          }
+        ]
+      },
+      "endCapacityByStage": {
+        "receive": 1,
+        "frame": 1,
+        "print": 1,
+        "arm": 2,
+        "integrate": 1,
+        "tool": 1,
+        "electronics": 1,
+        "test": 1,
+        "pack": 1
+      },
+      "materialRemaining": {
+        "frameKit": 0,
+        "joints": 0,
+        "controller": 0,
+        "sensors": 0,
+        "gripper": 0,
+        "filament": 0
+      },
+      "traceEventCounts": {
+        "firstInspectionFailures": 2,
+        "quarantines": 0
+      }
+    },
+    {
+      "id": "lower_failure",
+      "label": "검사 실패 확률 12%→6%",
+      "inputDifferences": {
+        "testFailureRate": {
+          "baseline": 0.12,
+          "scenario": 0.06
+        }
+      },
+      "config": {
+        "targetCells": 20,
+        "reinvestEvery": 0,
+        "durationSec": 1200,
+        "seed": 42,
+        "testFailureRate": 0.06,
+        "forceTestFailure": false,
+        "commissionSec": 45,
+        "autoReplenish": false,
+        "extraCells": [],
+        "stock": {
+          "frameKit": 20,
+          "joints": 120,
+          "controller": 20,
+          "sensors": 40,
+          "gripper": 20,
+          "filament": 3600
+        }
+      },
+      "metrics": {
+        "completed": 15,
+        "shippable": 15,
+        "installed": 0,
+        "pendingInstall": 0,
+        "wip": 5,
+        "quarantined": 0,
+        "blocked": 0,
+        "pendingRequests": 0
+      },
+      "initialResources": {
+        "count": 9,
+        "byStage": {
+          "receive": 1,
+          "frame": 1,
+          "print": 1,
+          "arm": 1,
+          "integrate": 1,
+          "tool": 1,
+          "electronics": 1,
+          "test": 1,
+          "pack": 1
+        },
+        "resources": [
+          {
+            "id": "receive-01",
+            "stationId": "receive",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "frame-01",
+            "stationId": "frame",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "print-01",
+            "stationId": "print",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "arm-01",
+            "stationId": "arm",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "integrate-01",
+            "stationId": "integrate",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "tool-01",
+            "stationId": "tool",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "electronics-01",
+            "stationId": "electronics",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "test-01",
+            "stationId": "test",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "pack-01",
+            "stationId": "pack",
+            "onlineAt": 0,
+            "sourceJobId": null
+          }
+        ]
+      },
+      "endCapacityByStage": {
+        "receive": 1,
+        "frame": 1,
+        "print": 1,
+        "arm": 1,
+        "integrate": 1,
+        "tool": 1,
+        "electronics": 1,
+        "test": 1,
+        "pack": 1
+      },
+      "materialRemaining": {
+        "frameKit": 0,
+        "joints": 0,
+        "controller": 0,
+        "sensors": 0,
+        "gripper": 0,
+        "filament": 0
+      },
+      "traceEventCounts": {
+        "firstInspectionFailures": 1,
+        "quarantines": 0
+      }
+    },
+    {
+      "id": "reinvest_3",
+      "label": "완료 3개마다 내부 편입",
+      "inputDifferences": {
+        "reinvestEvery": {
+          "baseline": 0,
+          "scenario": 3
+        }
+      },
+      "config": {
+        "targetCells": 20,
+        "reinvestEvery": 3,
+        "durationSec": 1200,
+        "seed": 42,
+        "testFailureRate": 0.12,
+        "forceTestFailure": false,
+        "commissionSec": 45,
+        "autoReplenish": false,
+        "extraCells": [],
+        "stock": {
+          "frameKit": 20,
+          "joints": 120,
+          "controller": 20,
+          "sensors": 40,
+          "gripper": 20,
+          "filament": 3600
+        }
+      },
+      "metrics": {
+        "completed": 19,
+        "shippable": 13,
+        "installed": 6,
+        "pendingInstall": 0,
+        "wip": 1,
+        "quarantined": 0,
+        "blocked": 0,
+        "pendingRequests": 0
+      },
+      "initialResources": {
+        "count": 9,
+        "byStage": {
+          "receive": 1,
+          "frame": 1,
+          "print": 1,
+          "arm": 1,
+          "integrate": 1,
+          "tool": 1,
+          "electronics": 1,
+          "test": 1,
+          "pack": 1
+        },
+        "resources": [
+          {
+            "id": "receive-01",
+            "stationId": "receive",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "frame-01",
+            "stationId": "frame",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "print-01",
+            "stationId": "print",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "arm-01",
+            "stationId": "arm",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "integrate-01",
+            "stationId": "integrate",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "tool-01",
+            "stationId": "tool",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "electronics-01",
+            "stationId": "electronics",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "test-01",
+            "stationId": "test",
+            "onlineAt": 0,
+            "sourceJobId": null
+          },
+          {
+            "id": "pack-01",
+            "stationId": "pack",
+            "onlineAt": 0,
+            "sourceJobId": null
+          }
+        ]
+      },
+      "endCapacityByStage": {
+        "receive": 1,
+        "frame": 2,
+        "print": 1,
+        "arm": 3,
+        "integrate": 2,
+        "tool": 1,
+        "electronics": 2,
+        "test": 2,
+        "pack": 1
+      },
+      "materialRemaining": {
+        "frameKit": 0,
+        "joints": 0,
+        "controller": 0,
+        "sensors": 0,
+        "gripper": 0,
+        "filament": 0
+      },
+      "traceEventCounts": {
+        "firstInspectionFailures": 3,
+        "quarantines": 0
+      }
+    }
+  ],
+  "recommendation": {
+    "objective": "Maximize shippable units for a 20-cell order at 1200 seconds.",
+    "nextFieldValidationCandidate": "extra_arm",
+    "operatingDecision": "Keep the baseline until real data, capex/operating cost, space, safety, availability, and reliability are verified.",
+    "reason": "Seed 42 produces 18 shippable cells with added initial arm capacity versus 15 baseline; internal reinvestment produces 19 completed but only 13 shippable cells.",
+    "qualityDecision": "Defer under this short-term shipping objective. No shipping gain at seed 42 does not establish no quality benefit; quality costs and field failure mechanisms are absent."
+  },
+  "sensitivity": {
+    "scope": "Paired seeds 1..30; model sensitivity only, no confidence interval or field-effect estimate.",
+    "aggregate": {
+      "extra_arm": {
+        "completed": {
+          "min": 0,
+          "mean": 1.9666666666666666,
+          "max": 4
+        },
+        "shippable": {
+          "min": 0,
+          "mean": 1.9666666666666666,
+          "max": 4
+        }
+      },
+      "lower_failure": {
+        "completed": {
+          "min": 0,
+          "mean": 0.7666666666666667,
+          "max": 3
+        },
+        "shippable": {
+          "min": 0,
+          "mean": 0.7666666666666667,
+          "max": 3
+        }
+      },
+      "reinvest_3": {
+        "completed": {
+          "min": 3,
+          "mean": 4.3,
+          "max": 6
+        },
+        "shippable": {
+          "min": -3,
+          "mean": -1.6666666666666667,
+          "max": 0
+        }
+      }
+    },
+    "paired": [
+      {
+        "seed": 1,
+        "results": {
+          "baseline": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 19,
+            "shippable": 19,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 1,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 20,
+            "shippable": 14,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 4,
+            "shippable": 4
+          },
+          "lower_failure": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "reinvest_3": {
+            "completed": 5,
+            "shippable": -1
+          }
+        }
+      },
+      {
+        "seed": 2,
+        "results": {
+          "baseline": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 18,
+            "shippable": 18,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 2,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 20,
+            "shippable": 14,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 2,
+            "shippable": 2
+          },
+          "lower_failure": {
+            "completed": 0,
+            "shippable": 0
+          },
+          "reinvest_3": {
+            "completed": 4,
+            "shippable": -2
+          }
+        }
+      },
+      {
+        "seed": 3,
+        "results": {
+          "baseline": {
+            "completed": 13,
+            "shippable": 13,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 2,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 14,
+            "shippable": 14,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 2,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 16,
+            "shippable": 11,
+            "installed": 4,
+            "pendingInstall": 1,
+            "wip": 2,
+            "quarantined": 2,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "lower_failure": {
+            "completed": 3,
+            "shippable": 3
+          },
+          "reinvest_3": {
+            "completed": 3,
+            "shippable": -2
+          }
+        }
+      },
+      {
+        "seed": 4,
+        "results": {
+          "baseline": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 18,
+            "shippable": 18,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 1,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 19,
+            "shippable": 13,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 3,
+            "shippable": 3
+          },
+          "lower_failure": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "reinvest_3": {
+            "completed": 4,
+            "shippable": -2
+          }
+        }
+      },
+      {
+        "seed": 5,
+        "results": {
+          "baseline": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 19,
+            "shippable": 19,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 1,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 20,
+            "shippable": 14,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 4,
+            "shippable": 4
+          },
+          "lower_failure": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "reinvest_3": {
+            "completed": 5,
+            "shippable": -1
+          }
+        }
+      },
+      {
+        "seed": 6,
+        "results": {
+          "baseline": {
+            "completed": 14,
+            "shippable": 14,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 17,
+            "shippable": 17,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 2,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 14,
+            "shippable": 14,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 19,
+            "shippable": 13,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 3,
+            "shippable": 3
+          },
+          "lower_failure": {
+            "completed": 0,
+            "shippable": 0
+          },
+          "reinvest_3": {
+            "completed": 5,
+            "shippable": -1
+          }
+        }
+      },
+      {
+        "seed": 7,
+        "results": {
+          "baseline": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 3,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 18,
+            "shippable": 12,
+            "installed": 5,
+            "pendingInstall": 1,
+            "wip": 1,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "lower_failure": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "reinvest_3": {
+            "completed": 3,
+            "shippable": -3
+          }
+        }
+      },
+      {
+        "seed": 8,
+        "results": {
+          "baseline": {
+            "completed": 14,
+            "shippable": 14,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 18,
+            "shippable": 12,
+            "installed": 5,
+            "pendingInstall": 1,
+            "wip": 1,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 2,
+            "shippable": 2
+          },
+          "lower_failure": {
+            "completed": 2,
+            "shippable": 2
+          },
+          "reinvest_3": {
+            "completed": 4,
+            "shippable": -2
+          }
+        }
+      },
+      {
+        "seed": 9,
+        "results": {
+          "baseline": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 17,
+            "shippable": 17,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 3,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 20,
+            "shippable": 14,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "lower_failure": {
+            "completed": 0,
+            "shippable": 0
+          },
+          "reinvest_3": {
+            "completed": 4,
+            "shippable": -2
+          }
+        }
+      },
+      {
+        "seed": 10,
+        "results": {
+          "baseline": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 20,
+            "shippable": 14,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 0,
+            "shippable": 0
+          },
+          "lower_failure": {
+            "completed": 0,
+            "shippable": 0
+          },
+          "reinvest_3": {
+            "completed": 4,
+            "shippable": -2
+          }
+        }
+      },
+      {
+        "seed": 11,
+        "results": {
+          "baseline": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 20,
+            "shippable": 14,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "lower_failure": {
+            "completed": 0,
+            "shippable": 0
+          },
+          "reinvest_3": {
+            "completed": 5,
+            "shippable": -1
+          }
+        }
+      },
+      {
+        "seed": 12,
+        "results": {
+          "baseline": {
+            "completed": 14,
+            "shippable": 14,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 6,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 18,
+            "shippable": 12,
+            "installed": 5,
+            "pendingInstall": 1,
+            "wip": 1,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "lower_failure": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "reinvest_3": {
+            "completed": 4,
+            "shippable": -2
+          }
+        }
+      },
+      {
+        "seed": 13,
+        "results": {
+          "baseline": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 17,
+            "shippable": 17,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 3,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 20,
+            "shippable": 14,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 2,
+            "shippable": 2
+          },
+          "lower_failure": {
+            "completed": 0,
+            "shippable": 0
+          },
+          "reinvest_3": {
+            "completed": 5,
+            "shippable": -1
+          }
+        }
+      },
+      {
+        "seed": 14,
+        "results": {
+          "baseline": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 19,
+            "shippable": 19,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 1,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 20,
+            "shippable": 14,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 3,
+            "shippable": 3
+          },
+          "lower_failure": {
+            "completed": 0,
+            "shippable": 0
+          },
+          "reinvest_3": {
+            "completed": 4,
+            "shippable": -2
+          }
+        }
+      },
+      {
+        "seed": 15,
+        "results": {
+          "baseline": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 18,
+            "shippable": 18,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 2,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 20,
+            "shippable": 14,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 3,
+            "shippable": 3
+          },
+          "lower_failure": {
+            "completed": 0,
+            "shippable": 0
+          },
+          "reinvest_3": {
+            "completed": 5,
+            "shippable": -1
+          }
+        }
+      },
+      {
+        "seed": 16,
+        "results": {
+          "baseline": {
+            "completed": 14,
+            "shippable": 14,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 6,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 17,
+            "shippable": 17,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 3,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 20,
+            "shippable": 14,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 3,
+            "shippable": 3
+          },
+          "lower_failure": {
+            "completed": 2,
+            "shippable": 2
+          },
+          "reinvest_3": {
+            "completed": 6,
+            "shippable": 0
+          }
+        }
+      },
+      {
+        "seed": 17,
+        "results": {
+          "baseline": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 19,
+            "shippable": 13,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 1,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "lower_failure": {
+            "completed": 0,
+            "shippable": 0
+          },
+          "reinvest_3": {
+            "completed": 4,
+            "shippable": -2
+          }
+        }
+      },
+      {
+        "seed": 18,
+        "results": {
+          "baseline": {
+            "completed": 14,
+            "shippable": 14,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 17,
+            "shippable": 17,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 2,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 19,
+            "shippable": 13,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 3,
+            "shippable": 3
+          },
+          "lower_failure": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "reinvest_3": {
+            "completed": 5,
+            "shippable": -1
+          }
+        }
+      },
+      {
+        "seed": 19,
+        "results": {
+          "baseline": {
+            "completed": 14,
+            "shippable": 14,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 6,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 14,
+            "shippable": 14,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 6,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 14,
+            "shippable": 14,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 6,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 18,
+            "shippable": 12,
+            "installed": 5,
+            "pendingInstall": 1,
+            "wip": 2,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 0,
+            "shippable": 0
+          },
+          "lower_failure": {
+            "completed": 0,
+            "shippable": 0
+          },
+          "reinvest_3": {
+            "completed": 4,
+            "shippable": -2
+          }
+        }
+      },
+      {
+        "seed": 20,
+        "results": {
+          "baseline": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 17,
+            "shippable": 17,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 3,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 20,
+            "shippable": 14,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "lower_failure": {
+            "completed": 0,
+            "shippable": 0
+          },
+          "reinvest_3": {
+            "completed": 4,
+            "shippable": -2
+          }
+        }
+      },
+      {
+        "seed": 21,
+        "results": {
+          "baseline": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 17,
+            "shippable": 17,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 2,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 19,
+            "shippable": 13,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 2,
+            "shippable": 2
+          },
+          "lower_failure": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "reinvest_3": {
+            "completed": 4,
+            "shippable": -2
+          }
+        }
+      },
+      {
+        "seed": 22,
+        "results": {
+          "baseline": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 19,
+            "shippable": 19,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 1,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 20,
+            "shippable": 14,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 3,
+            "shippable": 3
+          },
+          "lower_failure": {
+            "completed": 0,
+            "shippable": 0
+          },
+          "reinvest_3": {
+            "completed": 4,
+            "shippable": -2
+          }
+        }
+      },
+      {
+        "seed": 23,
+        "results": {
+          "baseline": {
+            "completed": 14,
+            "shippable": 14,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 6,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 18,
+            "shippable": 12,
+            "installed": 5,
+            "pendingInstall": 1,
+            "wip": 2,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "lower_failure": {
+            "completed": 2,
+            "shippable": 2
+          },
+          "reinvest_3": {
+            "completed": 4,
+            "shippable": -2
+          }
+        }
+      },
+      {
+        "seed": 24,
+        "results": {
+          "baseline": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 17,
+            "shippable": 17,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 2,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 18,
+            "shippable": 12,
+            "installed": 5,
+            "pendingInstall": 1,
+            "wip": 1,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 2,
+            "shippable": 2
+          },
+          "lower_failure": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "reinvest_3": {
+            "completed": 3,
+            "shippable": -3
+          }
+        }
+      },
+      {
+        "seed": 25,
+        "results": {
+          "baseline": {
+            "completed": 14,
+            "shippable": 14,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 18,
+            "shippable": 12,
+            "installed": 5,
+            "pendingInstall": 1,
+            "wip": 1,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "lower_failure": {
+            "completed": 2,
+            "shippable": 2
+          },
+          "reinvest_3": {
+            "completed": 4,
+            "shippable": -2
+          }
+        }
+      },
+      {
+        "seed": 26,
+        "results": {
+          "baseline": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 17,
+            "shippable": 17,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 2,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 19,
+            "shippable": 13,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 2,
+            "shippable": 2
+          },
+          "lower_failure": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "reinvest_3": {
+            "completed": 4,
+            "shippable": -2
+          }
+        }
+      },
+      {
+        "seed": 27,
+        "results": {
+          "baseline": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 17,
+            "shippable": 17,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 3,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 20,
+            "shippable": 14,
+            "installed": 5,
+            "pendingInstall": 1,
+            "wip": 0,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 2,
+            "shippable": 2
+          },
+          "lower_failure": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "reinvest_3": {
+            "completed": 5,
+            "shippable": -1
+          }
+        }
+      },
+      {
+        "seed": 28,
+        "results": {
+          "baseline": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 17,
+            "shippable": 17,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 3,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 20,
+            "shippable": 14,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 2,
+            "shippable": 2
+          },
+          "lower_failure": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "reinvest_3": {
+            "completed": 5,
+            "shippable": -1
+          }
+        }
+      },
+      {
+        "seed": 29,
+        "results": {
+          "baseline": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 18,
+            "shippable": 18,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 2,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 20,
+            "shippable": 14,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 3,
+            "shippable": 3
+          },
+          "lower_failure": {
+            "completed": 0,
+            "shippable": 0
+          },
+          "reinvest_3": {
+            "completed": 5,
+            "shippable": -1
+          }
+        }
+      },
+      {
+        "seed": 30,
+        "results": {
+          "baseline": {
+            "completed": 15,
+            "shippable": 15,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 5,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "extra_arm": {
+            "completed": 17,
+            "shippable": 17,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 3,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "lower_failure": {
+            "completed": 16,
+            "shippable": 16,
+            "installed": 0,
+            "pendingInstall": 0,
+            "wip": 4,
+            "quarantined": 0,
+            "blocked": 0,
+            "pendingRequests": 0
+          },
+          "reinvest_3": {
+            "completed": 19,
+            "shippable": 13,
+            "installed": 6,
+            "pendingInstall": 0,
+            "wip": 0,
+            "quarantined": 1,
+            "blocked": 0,
+            "pendingRequests": 0
+          }
+        },
+        "deltas": {
+          "extra_arm": {
+            "completed": 2,
+            "shippable": 2
+          },
+          "lower_failure": {
+            "completed": 1,
+            "shippable": 1
+          },
+          "reinvest_3": {
+            "completed": 4,
+            "shippable": -2
+          }
+        }
+      }
+    ]
+  },
+  "fortyMinuteAllocation": {
+    "scope": "Same fixed 20-cell order; allocation comparison, not long-run throughput evidence.",
+    "results": [
+      {
+        "reinvestEvery": 0,
+        "durationSec": 2400,
+        "targetCells": 20,
+        "metrics": {
+          "completed": 20,
+          "shippable": 20,
+          "installed": 0,
+          "pendingInstall": 0,
+          "wip": 0,
+          "quarantined": 0,
+          "blocked": 0,
+          "pendingRequests": 0
+        }
+      },
+      {
+        "reinvestEvery": 3,
+        "durationSec": 2400,
+        "targetCells": 20,
+        "metrics": {
+          "completed": 20,
+          "shippable": 14,
+          "installed": 6,
+          "pendingInstall": 0,
+          "wip": 0,
+          "quarantined": 0,
+          "blocked": 0,
+          "pendingRequests": 0
+        }
+      }
+    ]
+  },
+  "validation": {
+    "exactScenarioAssertions": "passed",
+    "deterministicReplay": "passed",
+    "conservation": "passed",
+    "sampledSnapshots": 748,
+    "waitingStatistics": "omitted: no additional waiting-time metric is needed for this decision"
+  },
+  "attribution": {
+    "user": "Factory topic/reference direction and requirement to explain company relevance, usefulness, readable titles, large captures, and marked screenshot areas.",
+    "codex": "Scenario comparison design, script execution, conservation checks, and conditional interpretation in this report."
+  },
+  "limitations": [
+    "Additional arm capacity is online from time zero; procurement, installation downtime and investment costs are not represented.",
+    "Lower testFailureRate is an assumed input change, not an implemented quality improvement.",
+    "No logistics, worker constraints, buffer blocking, mixed product flow, physical safety or failure availability model.",
+    "Shippable means completed products not allocated to internal installation; no dispatch or customer delivery event is modeled.",
+    "Scenario recommendation depends on the short-term shipping objective and does not establish a universally best policy."
+  ]
+}
