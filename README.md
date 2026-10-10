@@ -16,9 +16,9 @@ CELLFORGE is a standalone browser-based simulation of synthetic final assembly. 
 
 - **1장 — 무엇을 검토하나?** 생산량 증가가 출하 증가로 이어지는지 확인하는 문제와 큰 실제 실행 화면입니다. 이 문제는 공개 자료에서 도출한 가상 검토 사례이며 회사의 실제 장애를 확인한 것이 아닙니다.
 - **2장 — 무엇을 먼저 검증하나?** 기존 유지·암 조립 설비 추가·검사 실패 가정 개선·완성품 설비 재사용을 비교합니다. 암 설비 추가 시 출하 가능량 15→18대는 다음 검증 후보를 고르는 근거입니다. 비용·공간·안전·실측 확인 전에는 기존 조건 유지로 제안합니다.
-- **3장 — AI에게 무엇을 요구했고, 왜 수정했나?** 공고·부서 업무와 실제 쓸모를 다시 검토하고 회사 문제·선택 이유를 보완하도록 요구한 본인 결정 사례를 보여 줍니다. 현업의 목표·기록 확인, 조건 보정, 소규모 시험과 승인 절차는 제안으로 구분합니다.
+- **3장 — 현장 적용 전에 무엇을 확인하나?** 목표·기록 확인, 실측 조건 보정, 소규모 시험과 진행·보류 승인 순서를 큰 흐름도로 제안합니다. 모델 검증 결과와 현장 적용 전 확인 범위를 함께 표시합니다.
 
-[대안별 정확한 입력·결과·반복 비교](docs/DECISION_COMPARISON.md) · [회사·공고 근거와 제작 기여](docs/PORTFOLIO_DECISIONS.md) · [실제 요청과 반영 기록](docs/PERSONAL_DECISION.md)
+[대안별 정확한 입력·결과·반복 비교](docs/DECISION_COMPARISON.md) · [회사·공고 근거와 제작 기여](docs/PORTFOLIO_DECISIONS.md)
 
 독립 학습용 합성 프로토타입입니다. 김현태가 주제와 방향을 정하고 수정 의견을 제시했으며, Codex가 코드 구현·실험·검증을 지원했습니다.
 
@@ -29,7 +29,7 @@ CELLFORGE is a standalone browser-based simulation of synthetic final assembly. 
 
 [![포트폴리오 2장: 네 가지 개선안의 출하 가능량과 검증 후보 선택 이유](docs/portfolio/page-2.png)](docs/portfolio/CELLFORGE_LSELECTRIC_DT_Portfolio.pdf)
 
-[![포트폴리오 3장: AI에게 요구한 수정과 그 이유, 현업 검증·승인 제안](docs/portfolio/page-3.png)](docs/portfolio/CELLFORGE_LSELECTRIC_DT_Portfolio.pdf)
+[![포트폴리오 3장: 현장 적용 전 데이터 확인·조건 보정·소규모 시험·승인 제안](docs/portfolio/page-3.png)](docs/portfolio/CELLFORGE_LSELECTRIC_DT_Portfolio.pdf)
 
 </details>
 
